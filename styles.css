@@ -133,6 +133,7 @@ ul li a:hover::after {
   position: relative;
   overflow: hidden;
   background: linear-gradient(145deg, #f9f9ff, #ffffff);
+  padding: 80px 0;
 }
 
 .section::before {
@@ -162,13 +163,14 @@ ul li a:hover::after {
 .section__container {
   max-width: var(--max-width);
   margin: auto;
-  padding: 6rem 1rem 2rem;
+  padding: 2rem 1.5rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 4rem;
   align-items: center;
   position: relative;
   z-index: 1;
+  width: 100%;
 }
 
 .content {
@@ -211,7 +213,7 @@ ul li a:hover::after {
 }
 
 .title {
-  font-size: 3rem;
+  font-size: 3.2rem;
   font-weight: 700;
   line-height: 1.2;
   color: var(--text-dark);
@@ -239,7 +241,7 @@ ul li a:hover::after {
   line-height: 1.7;
   color: var(--text-light);
   margin-bottom: 2rem;
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   max-width: 90%;
 }
 
@@ -248,11 +250,12 @@ ul li a:hover::after {
   display: flex;
   gap: 1.5rem;
   margin-bottom: 2rem;
+  flex-wrap: wrap;
 }
 
 .btn {
-  padding: 12px 25px;
-  border-radius: 12px;
+  padding: 14px 32px;
+  border-radius: var(--border-radius-sm);
   font-weight: 600;
   font-size: 1rem;
   transition: all 0.3s ease;
@@ -262,6 +265,7 @@ ul li a:hover::after {
   gap: 0.5rem;
   cursor: pointer;
   border: none;
+  text-decoration: none;
 }
 
 .btn-primary {
@@ -290,7 +294,7 @@ ul li a:hover::after {
 
 /* Social Icons Styles */
 .social__section {
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 
 .social__header {
@@ -320,6 +324,7 @@ ul li a:hover::after {
 .social__icons {
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .social__icons a {
@@ -329,7 +334,7 @@ ul li a:hover::after {
   width: 50px;
   height: 50px;
   background: var(--white);
-  border-radius: 10px;
+  border-radius: 12px;
   color: var(--text-dark);
   font-size: 1.5rem;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05);
@@ -344,7 +349,7 @@ ul li a:hover::after {
   box-shadow: 0 10px 20px rgba(123, 63, 228, 0.2);
 }
 
-/* Image Styles - Kembali ke desain awal */
+/* Image Styles - FIXED: Mempertahankan bentuk asli foto profil */
 .image {
   display: grid;
   place-items: center;
@@ -364,7 +369,11 @@ ul li a:hover::after {
 }
 
 .image img {
-  width: min(28rem, 90%);
+  width: min(28rem, 100%);
+  max-width: 450px;
+  height: auto;
+  aspect-ratio: 1/1;
+  object-fit: cover;
   border-radius: 30px;
   box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease;
@@ -380,7 +389,7 @@ ul li a:hover::after {
 /* Card Styles */
 .cards-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
   margin-top: 3rem;
 }
@@ -478,7 +487,7 @@ textarea.form-control {
 /* Portfolio Grid */
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
   margin-top: 3rem;
 }
@@ -497,10 +506,22 @@ textarea.form-control {
 }
 
 .portfolio-image {
-  height: 220px;
+  height: 240px;
   background: linear-gradient(135deg, var(--primary-color), var(--primary-color-dark));
   position: relative;
   overflow: hidden;
+}
+
+.portfolio-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease;
+}
+
+.portfolio-item:hover .portfolio-image img {
+  transform: scale(1.1);
 }
 
 .portfolio-overlay {
@@ -537,7 +558,7 @@ textarea.form-control {
 }
 
 .portfolio-content h3 {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 700;
   margin-bottom: 0.8rem;
   color: var(--text-dark);
@@ -545,7 +566,7 @@ textarea.form-control {
 
 .portfolio-content p {
   color: var(--text-light);
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   margin-bottom: 1.2rem;
   line-height: 1.6;
 }
@@ -557,12 +578,12 @@ textarea.form-control {
 }
 
 .tag {
-  padding: 4px 14px;
+  padding: 6px 16px;
   background: rgba(123, 63, 228, 0.1);
   color: var(--primary-color);
   border-radius: 50px;
   font-size: 0.8rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 /* Contact Info Cards */
@@ -599,33 +620,69 @@ textarea.form-control {
   color: var(--primary-color);
 }
 
-/* Responsive Styles */
-@media (width < 1024px) {
-  .title {
-    font-size: 2.8rem;
+/* Responsive Styles - PERBAIKAN UTAMA */
+/* Desktop Large */
+@media (width >= 1200px) {
+  .section__container {
+    padding: 2rem 2rem;
   }
   
-  .section__container {
-    gap: 3rem;
+  .title {
+    font-size: 3.5rem;
+  }
+  
+  .image img {
+    max-width: 500px;
   }
 }
 
-@media (width < 900px) {
+/* Desktop Medium */
+@media (width < 1200px) and (width >= 1024px) {
+  .section__container {
+    gap: 3rem;
+    padding: 2rem 2rem;
+  }
+  
+  .title {
+    font-size: 3rem;
+  }
+  
+  .image img {
+    max-width: 400px;
+  }
+}
+
+/* Tablet Landscape */
+@media (width < 1024px) and (width >= 768px) {
+  .section__container {
+    gap: 2.5rem;
+    padding: 2rem 1.5rem;
+  }
+  
   .title {
     font-size: 2.5rem;
   }
   
   .description {
+    font-size: 1rem;
     max-width: 100%;
   }
   
-  .section__container {
-    padding: 6rem 1.5rem;
-    gap: 3rem;
+  .image img {
+    max-width: 350px;
+  }
+  
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (width < 750px) {
+/* Tablet Portrait & Mobile Landscape */
+@media (width < 768px) {
   nav .checkbox {
     display: block;
   }
@@ -656,11 +713,14 @@ textarea.form-control {
     font-size: 1.2rem;
   }
 
+  .section {
+    padding: 60px 0;
+  }
+
   .section__container {
-    padding: 7rem 1.5rem 4rem;
-    text-align: center;
+    padding: 5rem 1.5rem 3rem;
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 3rem;
   }
 
   .image {
@@ -669,15 +729,11 @@ textarea.form-control {
 
   .image img {
     width: min(22rem, 85%);
+    max-width: 350px;
   }
 
   .content {
     align-items: center;
-  }
-
-  .description {
-    margin-left: auto;
-    margin-right: auto;
     text-align: center;
   }
 
@@ -693,6 +749,24 @@ textarea.form-control {
 
   .title {
     text-align: center;
+    font-size: 2.2rem;
+  }
+
+  .description {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    max-width: 100%;
+    font-size: 1rem;
+  }
+
+  .action__btns {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .btn {
+    padding: 12px 28px;
   }
 
   .social__icons {
@@ -709,20 +783,54 @@ textarea.form-control {
     transform: translateX(-50%);
   }
 
-  .action__btns {
-    justify-content: center;
+  .cards-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .contact-info-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
   }
 }
 
+/* Mobile Portrait */
 @media (width < 480px) {
-  .title {
-    font-size: 2rem;
-  }
-  
   .nav__content {
     padding: 1rem;
   }
-  
+
+  nav .logo a {
+    font-size: 1.5rem;
+  }
+
+  .section {
+    padding: 40px 0;
+  }
+
+  .section__container {
+    padding: 4rem 1rem 2rem;
+    gap: 2rem;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .description {
+    font-size: 0.95rem;
+  }
+
   .action__btns {
     flex-direction: column;
     gap: 1rem;
@@ -731,23 +839,72 @@ textarea.form-control {
   
   .btn {
     width: 100%;
+    padding: 12px 20px;
   }
 
   .image img {
-    width: min(18rem, 90%);
+    width: min(16rem, 90%);
+    max-width: 280px;
   }
 
-  .cards-container {
-    grid-template-columns: 1fr;
+  .social__icons a {
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
   }
 
-  .portfolio-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .contact-info-card {
-    flex-direction: column;
-    text-align: center;
+  .card {
     padding: 1.5rem;
+  }
+
+  .card__icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .card__icon i {
+    font-size: 1.8rem;
+  }
+
+  .card h3 {
+    font-size: 1.2rem;
+  }
+
+  .portfolio-image {
+    height: 200px;
+  }
+
+  .portfolio-content {
+    padding: 1.5rem;
+  }
+
+  .portfolio-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .form-control {
+    padding: 12px 16px;
+  }
+}
+
+/* Small Mobile */
+@media (width < 360px) {
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .image img {
+    width: min(14rem, 90%);
+    max-width: 240px;
+  }
+
+  .social__icons {
+    gap: 0.7rem;
+  }
+
+  .social__icons a {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
   }
 }
