@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Portfolio | Muhammad Khoironi</title>
+  <style>
+    /* Style tambahan untuk gambar portfolio */
+    .portfolio-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform 0.5s ease;
+    }
+    
+    .portfolio-item:hover .portfolio-image img {
+      transform: scale(1.1);
+    }
+    
+    .portfolio-image {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--primary-color), var(--primary-color-dark));
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav__content">
+      <div class="logo"><a href="index.html">UXIVI</a></div>
+      <label for="check" class="checkbox">
+        <i class="ri-menu-line"></i>
+      </label>
+      <input type="checkbox" name="check" id="check" />
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="service.html">Service</a></li>
+        <li><a href="portfolio.html" style="color: var(--primary-color);">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="section">
+    <div class="section__container" style="grid-template-columns: 1fr;">
+      <div class="content" style="text-align: center; max-width: 800px; margin: 0 auto;">
+        <p class="subtitle" style="display: block; text-align: center;">🎨 MY PORTFOLIO</p>
+        <h1 class="title" style="text-align: center;">
+          Featured <span>Projects</span>
+        </h1>
+        <p class="description" style="margin-left: auto; margin-right: auto;">
+          Berikut beberapa proyek yang pernah saya kerjakan, mulai dari desain aplikasi,
+          website, hingga prototype interaktif. Setiap proyek dibuat dengan pendekatan
+          user-centered design dan fokus pada pengalaman pengguna.
+        </p>
+      </div>
+
+      <div class="portfolio-grid">
+        <!-- 1. Posyandu Digital -->
+        <div class="portfolio-item">
+          <div class="portfolio-image">
+            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Posyandu Digital - Aplikasi Kesehatan" />
+            <div class="portfolio-overlay">
+              <i class="ri-eye-line"></i>
+            </div>
+          </div>
+          <div class="portfolio-content">
+            <h3>Posyandu Digital</h3>
+            <p>Aplikasi kesehatan untuk memudahkan pendataan balita, jadwal imunisasi, dan laporan kesehatan.</p>
+            <div class="portfolio-tags">
+              <span class="tag">UI/UX</span>
+              <span class="tag">Healthcare</span>
+              <span class="tag">Mobile</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Company Profile -->
+        <div class="portfolio-item">
+          <div class="portfolio-image">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Company Profile - Website Corporate" />
+            <div class="portfolio-overlay">
+              <i class="ri-eye-line"></i>
+            </div>
+          </div>
+          <div class="portfolio-content">
+            <h3>Company Profile</h3>
+            <p>Website modern dan responsif untuk kebutuhan branding dan informasi perusahaan.</p>
+            <div class="portfolio-tags">
+              <span class="tag">Web Design</span>
+              <span class="tag">Corporate</span>
+              <span class="tag">Responsive</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Admin Dashboard -->
+        <div class="portfolio-item">
+          <div class="portfolio-image">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Admin Dashboard - Sistem Informasi" />
+            <div class="portfolio-overlay">
+              <i class="ri-eye-line"></i>
+            </div>
+          </div>
+          <div class="portfolio-content">
+            <h3>Admin Dashboard</h3>
+            <p>Dashboard admin dengan fokus pada kemudahan pengelolaan data dan visualisasi informasi.</p>
+            <div class="portfolio-tags">
+              <span class="tag">Dashboard</span>
+              <span class="tag">Analytics</span>
+              <span class="tag">Admin</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Landing Page Product -->
+        <div class="portfolio-item">
+          <div class="portfolio-image">
+            <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Landing Page - Product Digital" />
+            <div class="portfolio-overlay">
+              <i class="ri-eye-line"></i>
+            </div>
+          </div>
+          <div class="portfolio-content">
+            <h3>Landing Page Product</h3>
+            <p>Landing page dengan struktur marketing funnel untuk meningkatkan konversi pengguna.</p>
+            <div class="portfolio-tags">
+              <span class="tag">Landing Page</span>
+              <span class="tag">Marketing</span>
+              <span class="tag">Conversion</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Kasir Pro -->
+        <div class="portfolio-item">
+          <div class="portfolio-image">
+            <img src="https://images.unsplash.com/photo-1556742031-c6961e8560b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Kasir Pro - Aplikasi POS" />
+            <div class="portfolio-overlay">
+              <i class="ri-eye-line"></i>
+            </div>
+          </div>
+          <div class="portfolio-content">
+            <h3>Kasir Pro</h3>
+            <p>Prototype interaktif aplikasi kasir berbasis web menggunakan Figma.</p>
+            <div class="portfolio-tags">
+              <span class="tag">Prototype</span>
+              <span class="tag">Figma</span>
+              <span class="tag">POS</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. E-commerce Mobile -->
+        <div class="portfolio-item">
+          <div class="portfolio-image">
+            <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="E-commerce Mobile - Aplikasi Belanja" />
+            <div class="portfolio-overlay">
+              <i class="ri-eye-line"></i>
+            </div>
+          </div>
+          <div class="portfolio-content">
+            <h3>E-commerce Mobile</h3>
+            <p>Aplikasi e-commerce dengan fokus pada user experience dan kemudahan transaksi.</p>
+            <div class="portfolio-tags">
+              <span class="tag">Mobile</span>
+              <span class="tag">E-commerce</span>
+              <span class="tag">Shopping</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Call to Action -->
+      <div style="text-align: center; margin-top: 4rem;">
+        <a href="contact.html" class="btn btn-primary" style="padding: 16px 40px;">
+          <i class="ri-chat-1-line"></i> Mulai Proyek Anda
+        </a>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
